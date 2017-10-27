@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1040482644360",
+    "firebase_url": "https://oms-haulage.firebaseio.com",
+    "project_id": "oms-haulage",
+    "storage_bucket": "oms-haulage.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040482644360:android:d6eec6334acfeb6c",
+        "android_client_info": {
+          "package_name": "nucleus.com.driverapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1040482644360-amnmb7k3lh12rutbdtdvjc8iibgsq2fn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "nucleus.com.driverapp",
+            "certificate_hash": "6cd7da2094c51d63a2e25358bf2509e64a7e4479"
+          }
+        },
+        {
+          "client_id": "1040482644360-j41smfn57qa04cjmadcsj4pqdekh3486.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhdTA5dZ4bC8CvIUAWywZZOzvDbCjhIhs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1040482644360-j41smfn57qa04cjmadcsj4pqdekh3486.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
