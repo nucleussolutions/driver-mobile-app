@@ -5,4 +5,13 @@ package nucleus.com.driverapp;
  */
 
 public class AppModule {
+
+    private final DriverApplication application;
+
+
+    public AppModule(DriverApplication application) {
+        this.application = application;
+    }
+
+
 }
