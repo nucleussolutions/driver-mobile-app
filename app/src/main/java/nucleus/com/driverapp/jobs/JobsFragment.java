@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import butterknife.ButterKnife;
+import nucleus.com.driverapp.R;
+
 /**
  * Created by kevintan on 27/10/2017.
  */
@@ -21,7 +24,9 @@ public class JobsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+        View view = inflater.inflate(R.layout.fragment_jobs, container, false);
+        ButterKnife.bind(this, view);
+        return view;
     }
 
     @Override
