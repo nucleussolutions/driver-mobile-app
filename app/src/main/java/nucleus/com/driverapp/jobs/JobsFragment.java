@@ -9,12 +9,13 @@ import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
 import nucleus.com.driverapp.R;
+import nucleus.com.driverapp.response.JobsResponse;
 
 /**
  * Created by kevintan on 27/10/2017.
  */
 
-public class JobsFragment extends Fragment {
+public class JobsFragment extends Fragment implements JobsView{
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,4 +36,23 @@ public class JobsFragment extends Fragment {
     }
 
 
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
+    }
+
+    @Override
+    public void onSuccess(JobsResponse response) {
+
+    }
+
+    @Override
+    public void onFail(String message) {
+
+    }
 }

@@ -10,6 +10,7 @@ import nucleus.com.driverapp.api.DriverApi;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 /**
@@ -39,5 +40,11 @@ public class AppModule {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         return retrofit.create(DriverApi.class);
+    }
+
+    @Provides
+    @Singleton
+    FirebaseAuth providesFirebaseAuth(){
+        return FirebaseAuth.getInstance();
     }
 }

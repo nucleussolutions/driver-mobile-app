@@ -6,4 +6,19 @@
     android:layout_height="match_parent"
     tools:context="nucleus.com.driverapp.drive.DriveActivity">
 
+    <Button
+        android:id="@+id/button_startdriving"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Driving"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="445dp" />
+
+    <Button
+        android:id="@+id/button_stopdriving"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop Driving"
+        tools:layout_editor_absoluteX="251dp"
+        tools:layout_editor_absoluteY="447dp" />
 </android.support.constraint.ConstraintLayout>

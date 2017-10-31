@@ -15,4 +15,8 @@ public class DriverApplication extends Application {
         super.onCreate();
         appComponent = DaggerAppComponent.builder().appModule(new AppModule(this)).build();
     }
+
+    public AppComponent getAppComponent() {
+        return appComponent;
+    }
 }
