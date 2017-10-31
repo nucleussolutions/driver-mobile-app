@@ -1,5 +1,7 @@
 package nucleus.com.driverapp.login;
 
+import com.google.firebase.auth.FirebaseUser;
+
 import nucleus.com.driverapp.response.AuthResponse;
 
 /**
@@ -9,7 +11,6 @@ import nucleus.com.driverapp.response.AuthResponse;
 public interface LoginView {
     void showLoading();
     void hideLoading();
-    void login(String email, String password);
-    void onSuccess(AuthResponse response);
-    void onFail(String message);
+    void onSuccess(FirebaseUser currentUser);
+    void onFail(Exception exception);
 }

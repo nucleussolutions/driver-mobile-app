@@ -17,16 +17,22 @@ public class LoginPresenter {
 
     private static final String TAG = "LoginPresenter";
 
-    private FirebaseAuth mAuth;
+    @Inject
+    FirebaseAuth mAuth;
 
 
     public LoginPresenter(DriverApplication app, LoginView loginView) {
         this.loginView = loginView;
         app.getAppComponent().inject(this);
-        mAuth = FirebaseAuth.getInstance();
     }
 
-    public void login(){
-
+    public void login(String email, String password){
+        this.mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                this.loginView.onSuccess(this.mAuth.getCurrentUser());
+            }else{
+                this.loginView.onFail(task.getException());
+            }
+        });
     }
 }
