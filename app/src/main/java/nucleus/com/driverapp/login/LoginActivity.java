@@ -3,6 +3,7 @@ package nucleus.com.driverapp.login;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -25,6 +26,9 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +36,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import nucleus.com.driverapp.DriverApplication;
+import nucleus.com.driverapp.MainActivity;
 import nucleus.com.driverapp.R;
 import nucleus.com.driverapp.response.AuthResponse;
 
@@ -60,6 +66,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     @BindView(R.id.login_form)
     View mLoginFormView;
 
+    LoginPresenter loginPresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +84,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
             return false;
         });
+
+        DriverApplication application = (DriverApplication) getApplication();
+        this.loginPresenter = new LoginPresenter(application, this);
     }
 
     private void populateAutoComplete() {
@@ -164,8 +175,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-//            mAuthTask = new UserLoginTask(email, password);
-//            mAuthTask.execute((Void) null);
+            this.loginPresenter.login(email, password);
+
         }
     }
 
@@ -269,20 +280,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
     @Override
-    public void login(String email, String password) {
-
+    public void onSuccess(FirebaseUser currentUser) {
+        Intent mainIntent = new Intent(this, MainActivity.class);
+        startActivity(mainIntent);
     }
 
     @Override
-    public void onSuccess(AuthResponse response) {
-
+    public void onFail(Exception exception) {
+        Toast.makeText(this, exception.getMessage(), Toast.LENGTH_SHORT).show();
     }
-
-    @Override
-    public void onFail(String message) {
-
-    }
-
 
     private interface ProfileQuery {
         String[] PROJECTION = {
