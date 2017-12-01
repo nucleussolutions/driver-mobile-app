@@ -51,12 +51,12 @@ public class DriveActivity extends AppCompatActivity {
         task.addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void result) {
-                Toast.makeText(mContext,
+                Toast.makeText(DriveActivity.this,
                         getString(R.string.activity_updates_enabled),
                         Toast.LENGTH_SHORT)
                         .show();
-                setUpdatesRequestedState(true);
-                updateDetectedActivitiesList();
+//                setUpdatesRequestedState(true);
+//                updateDetectedActivitiesList();
             }
         });
 
@@ -64,11 +64,11 @@ public class DriveActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Log.w(TAG, getString(R.string.activity_updates_not_enabled));
-                Toast.makeText(mContext,
+                Toast.makeText(DriveActivity.this,
                         getString(R.string.activity_updates_not_enabled),
                         Toast.LENGTH_SHORT)
                         .show();
-                setUpdatesRequestedState(false);
+//                setUpdatesRequestedState(false);
             }
         });
 
@@ -86,10 +86,11 @@ public class DriveActivity extends AppCompatActivity {
      * Gets a PendingIntent to be sent for each activity detection.
      */
     private PendingIntent getActivityDetectionPendingIntent() {
-        Intent intent = new Intent(this, DetectedActivitiesIntentService.class);
+//        Intent intent = new Intent(this, DetectedActivitiesIntentService.class);
 
         // We use FLAG_UPDATE_CURRENT so that we get the same pending intent back when calling
         // requestActivityUpdates() and removeActivityUpdates().
-        return PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+//        return PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        return null;
     }
 }
