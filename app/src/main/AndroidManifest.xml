@@ -9,6 +9,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
 
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -42,6 +44,8 @@
 
         </activity>
         <activity android:name=".IntroActivity" />
+
+        <service android:name=".DetectedActivitiesIntentService" />
     </application>
 
 </manifest>

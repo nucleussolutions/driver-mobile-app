@@ -274,12 +274,12 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
 
     @Override
     public void showLoading() {
-
+        showProgress(true);
     }
 
     @Override
     public void hideLoading() {
-
+        showProgress(false);
     }
 
     @Override

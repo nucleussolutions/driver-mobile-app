@@ -28,7 +28,6 @@ public class RegisterPresenter {
         this.firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                // TODO: 31/10/2017 store credentials somewhere in shared preferences
                 this.registerView.onSuccess(user);
             }else{
                 this.registerView.onFail(task.getException());
