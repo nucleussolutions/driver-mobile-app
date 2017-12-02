@@ -17,6 +17,8 @@ import nucleus.com.driverapp.response.JobsResponse;
 
 public class JobsFragment extends Fragment implements JobsView{
 
+    private JobsPresenter presenter;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

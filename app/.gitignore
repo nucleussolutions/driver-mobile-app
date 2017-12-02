@@ -3,3 +3,6 @@
 src/release/res/xml/config.xml
 
 google-services.json
+
+.project
+.classpath
