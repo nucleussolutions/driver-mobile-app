@@ -73,7 +73,8 @@ dependencies {
     }
     compile 'com.google.firebase:firebase-core:11.6.2'
     compile 'com.squareup.wire:wire-runtime:2.2.0'
-
+    compile group: 'com.amazonaws', name: 'aws-android-sdk-s3', version: '2.6.9'
+    compile group: 'com.amazonaws', name: 'aws-android-sdk-core', version: '2.6.9'
 }
 
 
