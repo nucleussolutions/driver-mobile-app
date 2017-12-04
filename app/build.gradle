@@ -72,6 +72,8 @@ dependencies {
         transitive = true
     }
     compile 'com.google.firebase:firebase-core:11.6.2'
+    compile 'com.squareup.wire:wire-runtime:2.2.0'
+
 }
 
 
