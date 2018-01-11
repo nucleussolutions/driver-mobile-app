@@ -87,4 +87,10 @@ public class DriveActivity extends AppCompatActivity {
 //        return PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         return null;
     }
+
+
+
+    void updateConsignmentDetails(){
+
+    }
 }
