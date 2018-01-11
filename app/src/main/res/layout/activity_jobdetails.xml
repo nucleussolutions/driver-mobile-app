@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <TextView
+    <TextView android:id="@+id/textview_rftnumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -20,5 +20,15 @@
         android:layout_height="wrap_content" />
 
 
+
+    <Button android:id="@+id/button_startdriving"
+        android:layout_width="match_parent"
+        android:text="Start Driving"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="Update Trip Sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </android.support.constraint.ConstraintLayout>

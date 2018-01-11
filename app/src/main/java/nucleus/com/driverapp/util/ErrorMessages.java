@@ -29,7 +29,7 @@ import android.content.res.Resources;
 
 import com.google.android.gms.location.GeofenceStatusCodes;
 
-import io.hypertrack.sendeta.R;
+import nucleus.com.driverapp.R;
 
 /**
  * Created by piyush on 29/06/16.
