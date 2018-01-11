@@ -4,6 +4,11 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.content.Context;
 
+import com.google.android.gms.location.Geofence;
+import com.google.android.gms.location.GeofencingEvent;
+
+import nucleus.com.driverapp.util.ErrorMessages;
+
 /**
  * An {@link IntentService} subclass for handling asynchronous task requests in
  * a service on a separate handler thread.
@@ -13,6 +18,7 @@ import android.content.Context;
  */
 public class GeofenceTransitionService extends IntentService {
 
+    private static final String TAG = "GeofenceTransitionServi";
 
     // TODO: Rename actions, choose action names that describe tasks that this
     // IntentService can perform, e.g. ACTION_FETCH_NEW_ITEMS
@@ -60,16 +66,32 @@ public class GeofenceTransitionService extends IntentService {
     @Override
     protected void onHandleIntent(Intent intent) {
         if (intent != null) {
-            final String action = intent.getAction();
-            if (ACTION_FOO.equals(action)) {
-                final String param1 = intent.getStringExtra(EXTRA_PARAM1);
-                final String param2 = intent.getStringExtra(EXTRA_PARAM2);
-                handleActionFoo(param1, param2);
-            } else if (ACTION_BAZ.equals(action)) {
-                final String param1 = intent.getStringExtra(EXTRA_PARAM1);
-                final String param2 = intent.getStringExtra(EXTRA_PARAM2);
-                handleActionBaz(param1, param2);
+            GeofencingEvent geofencingEvent = GeofencingEvent.fromIntent(intent);
+            if (geofencingEvent.hasError()) {
+                String errorMessage = ErrorMessages.getGeofenceErrorString(this,
+                        geofencingEvent.getErrorCode());
+//                HTLog.e(TAG, errorMessage);
+                return;
             }
+
+            // Get the transition type.
+            int geofenceTransition = geofencingEvent.getGeofenceTransition();
+            if (geofenceTransition == Geofence.GEOFENCE_TRANSITION_DWELL) {
+//                HTLog.i(TAG, "User is dwelling in geo fence.");
+//                ActionManager.getSharedManager(getApplicationContext()).OnGeoFenceSuccess();
+
+            } else {
+                // Log the error.
+//                HTLog.e(TAG, getString(R.string.geofence_transition_invalid_type,
+//                        geofenceTransition));
+            }
+
+            // Get the geofences that were triggered. A single event can trigger
+            // multiple geofences.
+//            String geofenceTransitionDetails = getGeofenceTransitionDetails(geofenceTransition,
+//                    geofencingEvent.getTriggeringGeofences());
+
+//            HTLog.i(TAG, "GeoFenceTransition Details: " + geofenceTransitionDetails);
         }
     }
 
