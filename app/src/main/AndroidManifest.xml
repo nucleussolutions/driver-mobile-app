@@ -34,16 +34,25 @@
             android:name=".register.RegisterActivity"
             android:label="@string/title_activity_register" />
         <activity android:name=".ForgetPasswordActivity" />
-        <activity android:name=".drive.DriveActivity"></activity>
         <activity android:name=".IntroActivity" />
 
-        <service android:name=".DetectedActivitiesIntentService" />
 
         <activity
             android:name=".SplashScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_splash_screen"
             android:theme="@style/FullscreenTheme"></activity>
+        <activity android:name=".drive.DriveActivity" />
+
+        <!--<service android:name=".DetectedActivitiesIntentService" />-->
+        <service
+            android:name=".GeofenceTransitionService"
+            android:exported="false" />
+
+        <activity
+            android:name=".tripsheet.TripSheetActivity"
+            android:label="@string/title_activity_trip_sheet"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

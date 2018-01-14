@@ -48,28 +48,22 @@ public class DriveActivity extends AppCompatActivity {
                 Const.DETECTION_INTERVAL_IN_MILLISECONDS,
                 getActivityDetectionPendingIntent());
 
-        task.addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void result) {
-                Toast.makeText(DriveActivity.this,
-                        getString(R.string.activity_updates_enabled),
-                        Toast.LENGTH_SHORT)
-                        .show();
+        task.addOnSuccessListener(result -> {
+            Toast.makeText(DriveActivity.this,
+                    getString(R.string.activity_updates_enabled),
+                    Toast.LENGTH_SHORT)
+                    .show();
 //                setUpdatesRequestedState(true);
 //                updateDetectedActivitiesList();
-            }
         });
 
-        task.addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.w(TAG, getString(R.string.activity_updates_not_enabled));
-                Toast.makeText(DriveActivity.this,
-                        getString(R.string.activity_updates_not_enabled),
-                        Toast.LENGTH_SHORT)
-                        .show();
+        task.addOnFailureListener(e -> {
+            Log.w(TAG, getString(R.string.activity_updates_not_enabled));
+            Toast.makeText(DriveActivity.this,
+                    getString(R.string.activity_updates_not_enabled),
+                    Toast.LENGTH_SHORT)
+                    .show();
 //                setUpdatesRequestedState(false);
-            }
         });
 
     }
