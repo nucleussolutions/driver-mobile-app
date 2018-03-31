@@ -5,4 +5,5 @@ package nucleus.com.driverapp.response;
  */
 
 public class JobsResponse {
+
 }
