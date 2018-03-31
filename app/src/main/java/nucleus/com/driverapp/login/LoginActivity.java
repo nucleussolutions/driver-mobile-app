@@ -37,6 +37,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import nucleus.com.driverapp.DriverApplication;
+import nucleus.com.driverapp.ForgetPasswordActivity;
 import nucleus.com.driverapp.MainActivity;
 import nucleus.com.driverapp.R;
 import nucleus.com.driverapp.response.AuthResponse;
@@ -177,6 +178,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             this.loginPresenter.login(email, password);
 
         }
+    }
+
+    @OnClick(R.id.forget_password_button)
+    void forgetPasswordClick(){
+        Intent forgetPasswordIntent = new Intent(this, ForgetPasswordActivity.class);
+        startActivity(forgetPasswordIntent);
     }
 
     private boolean isEmailValid(String email) {
