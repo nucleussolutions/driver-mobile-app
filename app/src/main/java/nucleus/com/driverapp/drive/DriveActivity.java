@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import nucleus.com.driverapp.R;
 import nucleus.com.driverapp.util.Const;
 
@@ -35,6 +36,7 @@ public class DriveActivity extends AppCompatActivity {
     }
 
 
+    @OnClick(R.id.button_startdriving)
     void startDriving(){
 
 
@@ -68,10 +70,13 @@ public class DriveActivity extends AppCompatActivity {
 
     }
 
+    @OnClick(R.id.button_stopdriving)
     void stopDriving(){
 
     }
 
+
+    @OnClick(R.id.button_reportfailure)
     void reportFailure(){
 
     }

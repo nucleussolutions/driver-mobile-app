@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="match_parent" android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context="nucleus.com.driverapp.drive.DriveActivity">
 
     <Button
         android:id="@+id/button_startdriving"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Start Driving"
         tools:layout_editor_absoluteX="16dp"
@@ -16,9 +16,19 @@
 
     <Button
         android:id="@+id/button_stopdriving"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Stop Driving"
         tools:layout_editor_absoluteX="251dp"
         tools:layout_editor_absoluteY="447dp" />
-</android.support.constraint.ConstraintLayout>
+
+    <Button android:id="@+id/button_reportfailure"
+        android:layout_width="match_parent"
+        android:text="Report Failure"
+        android:layout_height="wrap_content" />
+
+    <Button android:id="@+id/button_update_consignmentdetails"
+        android:layout_width="match_parent"
+        android:text="Update Consignment Details"
+        android:layout_height="wrap_content" />
+</LinearLayout>
