@@ -24,7 +24,6 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -37,10 +36,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import nucleus.com.driverapp.DriverApplication;
-import nucleus.com.driverapp.ForgetPasswordActivity;
+import nucleus.com.driverapp.forgetpassword.ForgetPasswordActivity;
 import nucleus.com.driverapp.MainActivity;
 import nucleus.com.driverapp.R;
-import nucleus.com.driverapp.response.AuthResponse;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
