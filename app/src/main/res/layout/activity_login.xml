@@ -80,6 +80,10 @@
                 android:text="Forget Password"
                 android:textStyle="bold" />
 
+            <Button android:id="@+id/button_phone_login"
+                android:layout_width="match_parent"
+                android:text="Phone Login"
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
