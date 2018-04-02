@@ -7,5 +7,6 @@ package nucleus.com.driverapp.tripsheet;
 public interface TripsheetView {
     void showLoading();
     void hideLoading();
-
+    void onSuccess();
+    void onFailure();
 }
